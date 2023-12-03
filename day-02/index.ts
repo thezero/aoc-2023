@@ -1,1 +1,1 @@
-export { run } from './cubes';
+export { run } from './cubes-power';
