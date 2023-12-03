@@ -38,7 +38,6 @@ async function read() {
             }
         }
 
-        console.log(tracker.blue, tracker.green, tracker.red);
         result += tracker.blue * tracker.green * tracker.red;
     }
 
