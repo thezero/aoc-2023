@@ -30,7 +30,7 @@ const matchPattern = '([1-9]|' + Object.keys(conversionMap).join('|') + ')';
 const startPattern = new RegExp('.*?' + matchPattern);
 const endPattern = new RegExp('.*' + matchPattern);
 
-async function read() {
+export async function run() {
     const data = await fs.readFile(__dirname + '/data.txt');
     const lines = data.toString().split('\n');
 
@@ -44,8 +44,4 @@ async function read() {
     }
 
     console.log(result);
-}
-
-export function run() {
-    void read();
 }

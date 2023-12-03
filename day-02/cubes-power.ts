@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 
 const ballMatch = /(\d+) (red|green|blue)/
 
-async function read() {
+export async function run() {
     const file = await fs.readFile(__dirname + '/data.txt');
     const data = file.toString().split('\n');
 
@@ -42,8 +42,4 @@ async function read() {
     }
 
     console.log(result);
-}
-
-export function run() {
-    void read();
 }

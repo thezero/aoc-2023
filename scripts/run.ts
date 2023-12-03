@@ -7,7 +7,7 @@ if (!/^\d+$/.exec(id)) {
 
 async function run() {
     const script = await import('../day-' + id);
-    script.run();
+    await script.run();
 }
 
 void run();

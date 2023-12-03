@@ -10,7 +10,7 @@ function add(counter: number, start: string|undefined, end: string|undefined): n
     return counter + num;
 }
 
-async function read() {
+export async function run() {
     const data = await fs.readFile(__dirname + '/data.txt');
     const characters = data.toString();
 
@@ -38,8 +38,4 @@ async function read() {
     result = add(result, start, end);
 
     console.log(result);
-}
-
-export function run() {
-    void read();
 }
