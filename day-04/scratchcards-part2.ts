@@ -5,7 +5,6 @@ export async function run() {
     const data = file.toString().split('\n');
 
     const copies = Array.from(Array(data.length), () => 1);
-    const matchCount = Array.from(Array(data.length), () => 0);
 
     data.forEach((card, index) => {
         const [, numbers] = card.split(':');
@@ -14,13 +13,14 @@ export async function run() {
         const winningList = new Set(winning.split(' ').filter(Boolean));
         const mineList = mine.split(' ').filter(Boolean);
 
+        let matchCount = 0;
         for (const num of mineList) {
             if (winningList.has(num)) {
-                matchCount[index]++;
+                matchCount++;
             }
         }
 
-        for (let i = 0; i < matchCount[index]; i++) {
+        for (let i = 0; i < matchCount; i++) {
             copies[i + index + 1] += copies[index];
         }
     });
