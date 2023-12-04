@@ -1,1 +1,1 @@
-export { run } from './find-gears';
+export { run } from './gear-ratios-part2';

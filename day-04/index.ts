@@ -1,1 +1,1 @@
-export { run } from './card-waves';
+export { run } from './scratchcards-part2';
