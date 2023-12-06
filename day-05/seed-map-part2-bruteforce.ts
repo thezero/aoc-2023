@@ -1,5 +1,4 @@
 import fs from 'fs/promises';
-import process = require('process');
 
 interface MapRange {
     start: number;
@@ -74,13 +73,7 @@ export async function run() {
         const start = parseInt(seedDef[seedIndex]);
         const len = parseInt(seedDef[seedIndex + 1]);
 
-        console.log('Starting new def', start, len);
-
         for (let seed = start; seed < start + len; seed++) {
-            const offset = seed - start;
-            if (!(offset % 10000000)) {
-                console.log('  another 10M');
-            }
             let location = seed;
 
             for (let mapId = 0; mapId < maps.length; mapId++) {
